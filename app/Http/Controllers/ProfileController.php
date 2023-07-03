@@ -15,7 +15,7 @@ class ProfileController extends Controller
         return view('profile.index', compact('user'));
     }
 
-    
+
     public function edit()
     {
         $user = Auth::user();
@@ -36,11 +36,6 @@ class ProfileController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        // Hapus gambar lama jika ada gambar baru yang diunggah
-        if ($request->hasFile('image')) {
-            Storage::disk('public')->delete('imageprofile/' . $user->image);
-        }
-
         // Mengupdate data pengguna
         $user->name = $validatedData['name'];
         $user->email = $validatedData['email'];
@@ -54,6 +49,7 @@ class ProfileController extends Controller
 
         // Mengupload gambar baru jika ada
         if ($request->hasFile('image')) {
+            Storage::disk('public')->delete('imageprofile/' . $user->image);
             $image = $request->file('image');
             $image->storeAs('public/imageprofile', $image->hashName());
             $user->image = $image->hashName();

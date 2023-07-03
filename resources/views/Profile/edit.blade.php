@@ -17,20 +17,7 @@
 <body>
     <div class="container">
         <div class="row mt-5">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Profile Picture</h5>
-                        <img src="{{ asset('storage/imageprofile/' . $user->image) }}" alt="Profile Picture" class="rounded-image">
-                        <div class="form-group mt-3">
-                            <label for="image">Upload New Picture</label>
-                            <input type="file" name="image" id="image" class="form-control-file">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
                         <h1 class="card-title">Profile</h1>
@@ -42,7 +29,16 @@
                         <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
-
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Profile Picture</h5>
+                                        <img src="{{ asset('storage/imageprofile/' . $user->image) }}" alt="" class="rounded-image">
+                                    <div class="form-group mt-3">
+                                        <label for="image">Upload New Picture</label>
+                                        <input type="file" name="image" id="image" class="form-control-file">
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" name="name" id="name" value="{{ $user->name }}" required class="form-control">
