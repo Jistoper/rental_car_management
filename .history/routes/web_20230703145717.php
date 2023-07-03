@@ -38,9 +38,9 @@ Route::view('/service', 'Home.services')->name('service');
 Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 
+    Route::controller()
     Route::get('admin/car', [AdminController::class, 'getall'])->name('admin.getall');
-
-    Route::controller(AdminController::class)->as('car.')->group(function(){
+    Route::controller(CarController::class)->as('car.')->group(function(){
         Route::get('/car', 'getall')->name('getall'); // car index
         Route::get('/car-create', 'create')->name('create'); // car create (view form)
         Route::post('/car-create-store', 'storeCar')->name('store'); // car store (store data to database)

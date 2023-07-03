@@ -4,25 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Session;
 
-class AdminController extends Controller
+
+class CarController extends Controller
 {
-    public function index(){
-        return view('Admin.dashboard');
-    }
-
     // Start Car Data---------------------------------------------------------------------------------------
     public function getall()
     {
         $response = Http::get('http://localhost:8080/api/cars');
         $cars = json_decode($response, true);
 
-        return view('Admin.content.car.cartable', ['Cars' => $cars['Cars']]);
+        return view('backsite.content.car.cartable', ['Cars' => $cars['Cars']]);
     }
 
     public function create()
     {
-        return view('Admin.content.car.createcar');
+        return view('backsite.content.car.createcar');
     }
 
     public function storeCar(Request $request)
@@ -65,7 +64,7 @@ class AdminController extends Controller
             "color" => $request->color,
         ];
 
-        return view('Admin.content.car.editcar')->with('data', $data);
+        return view('backsite.content.car.editcar')->with('data', $data);
     }
 
     public function storeEdit(Request $request)
@@ -110,7 +109,7 @@ class AdminController extends Controller
         $response = Http::get('http://localhost:8080/api/cars');
         $cars = json_decode($response, true);
 
-        return view('Admin.content.rent.renttable', ['Cars' => $cars['Cars']]);
+        return view('backsite.content.rent.renttable', ['Cars' => $cars['Cars']]);
     }
 
     public function rentView(Request $request)
@@ -123,7 +122,7 @@ class AdminController extends Controller
             "color" => $request->color,
         ];
 
-        return view('Admin.content.rent.createrent')->with('data', $data);
+        return view('backsite.content.rent.createrent')->with('data', $data);
     }
 
     public function rentStore(Request $request)
@@ -157,7 +156,7 @@ class AdminController extends Controller
             $carData[$car['car_id']] = $car;
         }
 
-        return view('Admin.content.rent.historyrent', [
+        return view('backsite.content.rent.historyrent', [
             'Rent' => $rentalHistory,
             'Car' => $carData,
         ]);
@@ -195,7 +194,7 @@ class AdminController extends Controller
             "color" => $request->color,
         ];
 
-        return view('Admin.content.rent.editrent')->with('data', $data);
+        return view('backsite.content.rent.editrent')->with('data', $data);
     }
     
     public function rentEditStore(Request $request)
@@ -240,7 +239,7 @@ class AdminController extends Controller
         $response = Http::get('http://localhost:8080/api/cars');
         $cars = json_decode($response, true);
 
-        return view('Admin.content.maintenance.tablemtn', ['Cars' => $cars['Cars']]);
+        return view('backsite.content.maintenance.tablemtn', ['Cars' => $cars['Cars']]);
     }
 
     public function getListMtn()
@@ -256,7 +255,7 @@ class AdminController extends Controller
             $carData[$car['car_id']] = $car;
         }
 
-        return view('Admin.content.maintenance.historymtn', [
+        return view('backsite.content.maintenance.historymtn', [
             'Mtn' => $maintenanceHistory,
             'Car' => $carData,
         ]);
@@ -270,7 +269,7 @@ class AdminController extends Controller
             "model" => $request->model,
             "registration_number" => $request->registration_number,
         ];
-        return view('Admin.content.maintenance.createmtn', ['data' => $data]);
+        return view('backsite.content.maintenance.createmtn', ['data' => $data]);
     }
 
     public function storeMtn(Request $request)
@@ -313,7 +312,7 @@ class AdminController extends Controller
             "expense" => $request->expense,
         ];
 
-        return view('Admin.content.maintenance.editmtn')->with('data', $data);
+        return view('backsite.content.maintenance.editmtn')->with('data', $data);
     }
 
     public function mtnEditStore(Request $request)

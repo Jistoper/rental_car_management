@@ -1,4 +1,4 @@
-@extends('Admin.dashboard')
+@extends('backsite.dashboard')
 
 @section('content')
 
