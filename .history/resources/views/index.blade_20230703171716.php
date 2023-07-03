@@ -21,29 +21,10 @@
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
 
+    
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- Favicons -->
-    <link href="{{ asset('adminassets/img/favicon.png') }}" rel="icon">
-    <link href="{{ asset('adminassets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-    
-    <!-- Vendor CSS Files -->
-    {{-- <link href="{{ asset('adminassets/assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"> --}}
-    <link href="{{ asset('adminassets/assets/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('adminassets/assets/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('adminassets/assets/quill/quill.snow.css') }}" rel="stylesheet">
-    <link href="{{ asset('adminassets/assets/quill/quill.bubble.css') }}" rel="stylesheet">
-    <link href="{{ asset('adminassets/assets/remixicon/remixicon.css') }}" rel="stylesheet">
-    <link href="{{ asset('adminassets/assets/simple-datatables/style.css') }}" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="{{ asset('adminassets/css/style.css') }}" rel="stylesheet">
   </head>
   <body>
     

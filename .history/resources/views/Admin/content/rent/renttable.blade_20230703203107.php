@@ -4,9 +4,8 @@
 
 <script>
     function calculateTotalPrice(id) {
-        var rentDate = new Date(document.querySelectorAll('input[id="rent_date"]')[id].value);
-        var returnDate = new Date(document.querySelectorAll('input[id="return_date"]')[id].value);
-        var pricePerDay = new Date(document.querySelectorAll('input[id="price"]')[id].value);
+        var rentDate = new Date(document.getElementById('rent_date').value);
+        var returnDate = new Date(document.getElementById('return_date').value);
     
         if (!isNaN(rentDate.getTime()) && !isNaN(returnDate.getTime())) {
             // Calculate the difference in days
@@ -71,7 +70,7 @@
 </div>
 
 @foreach($Cars as $i => $cars)
-    <div class="modal fade" id="AddRental{{ $cars['car_id'] }}" tabindex="-1">
+    <div class="modal fade" id="AddRental{{ $i }}" tabindex="-1">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
@@ -119,13 +118,13 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-floating">
-                                <input type="date" name="rent_date" id="rent_date" class="form-control" placeholder="Rent Date" required oninput="calculateTotalPrice({{ $i }})">
+                                <input type="date" name="rent_date" id="rent_date" class="form-control" placeholder="Rent Date" required>
                                 <label for="rent_date">Rent Date</label>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-floating">
-                                <input type="date" name="return_date" id="return_date" class="form-control" placeholder="Return Date" required oninput="calculateTotalPrice({{ $i }})">
+                                <input type="date" name="return_date" id="return_date" class="form-control" placeholder="Return Date" required>
                                 <label for="return_date">Return Date</label>
                             </div>
                         </div>
@@ -147,6 +146,9 @@
                                 <input type="text" name="total_price" id="total_price" class="form-control" placeholder="Rent Fee" value="0" disabled>
                                 <label for="total_price">Rent Fee</label>
                             </div>
+                        </div>
+                        <div class="text-center mb-3">
+                            <a href="#" onclick="calculateTotalPrice({{ $i }})">test</a>
                         </div>
                         <div class="text-center mb-3">
                             <button class="btn btn-primary rounded-pill" onclick="getContent()" type="submit">

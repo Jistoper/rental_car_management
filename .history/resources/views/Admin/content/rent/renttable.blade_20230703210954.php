@@ -6,7 +6,6 @@
     function calculateTotalPrice(id) {
         var rentDate = new Date(document.querySelectorAll('input[id="rent_date"]')[id].value);
         var returnDate = new Date(document.querySelectorAll('input[id="return_date"]')[id].value);
-        var pricePerDay = new Date(document.querySelectorAll('input[id="price"]')[id].value);
     
         if (!isNaN(rentDate.getTime()) && !isNaN(returnDate.getTime())) {
             // Calculate the difference in days

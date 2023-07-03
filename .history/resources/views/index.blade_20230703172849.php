@@ -34,13 +34,13 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     
     <!-- Vendor CSS Files -->
-    {{-- <link href="{{ asset('adminassets/assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"> --}}
-    <link href="{{ asset('adminassets/assets/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('adminassets/assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('adminassets/assets/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('adminassets/assets/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('adminassets/assets/quill/quill.snow.css') }}" rel="stylesheet">
     <link href="{{ asset('adminassets/assets/quill/quill.bubble.css') }}" rel="stylesheet">
-    <link href="{{ asset('adminassets/assets/remixicon/remixicon.css') }}" rel="stylesheet">
-    <link href="{{ asset('adminassets/assets/simple-datatables/style.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('adminassets/assets/remixicon/remixicon.css') }}" rel="stylesheet">
+    <link href="{{ asset('adminassets/assets/simple-datatables/style.css') }}" rel="stylesheet"> --}}
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('adminassets/css/style.css') }}" rel="stylesheet">
@@ -149,14 +149,14 @@
       });
   </script>
 
-  <script src="{{ asset('adminassets/assets/apexcharts/apexcharts.min.js') }}"></script>
+  {{-- <script src="{{ asset('adminassets/assets/apexcharts/apexcharts.min.js') }}"></script>
   <script src="{{ asset('adminassets/assets/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('adminassets/assets/chart.js/chart.umd.js') }}"></script>
   <script src="{{ asset('adminassets/assets/echarts/echarts.min.js') }}"></script>
   <script src="{{ asset('adminassets/assets/quill/quill.min.js') }}"></script>
   <script src="{{ asset('adminassets/assets/simple-datatables/simple-datatables.js') }}"></script>
   <script src="{{ asset('adminassets/assets/tinymce/tinymce.min.js') }}"></script>
-  <script src="{{ asset('adminassets/assets/php-email-form/validate.js') }}"></script>
+  <script src="{{ asset('adminassets/assets/php-email-form/validate.js') }}"></script> --}}
 
   <!-- Template Main JS File -->
   <script src="{{ asset('adminassets/js/main.js') }}"></script>

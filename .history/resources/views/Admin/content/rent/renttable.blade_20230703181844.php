@@ -3,28 +3,25 @@
 @section('content')
 
 <script>
-    function calculateTotalPrice(id) {
-        var rentDate = new Date(document.querySelectorAll('input[id="rent_date"]')[id].value);
-        var returnDate = new Date(document.querySelectorAll('input[id="return_date"]')[id].value);
-        var pricePerDay = new Date(document.querySelectorAll('input[id="price"]')[id].value);
-    
-        if (!isNaN(rentDate.getTime()) && !isNaN(returnDate.getTime())) {
-            // Calculate the difference in days
-            var diffInTime = returnDate.getTime() - rentDate.getTime();
-            var diffInDays = Math.ceil(diffInTime / (1000 * 3600 * 24));
-            
-            // Convert the price per day to a number
-            var pricePerDay = 300000;
-            
-            // Calculate the total price
-            var totalPrice = diffInDays * pricePerDay;
-        
-            // Update the total price field as a string
-            document.querySelectorAll('input[id="total_price"]')[id].value = totalPrice.toString();
-        }
-        else {
-            document.querySelectorAll('input[id="total_price"]')[id].value = "0";
-        }
+    function calculateTotalPrice() {
+      var rentDate = new Date(document.getElementById('rent_date').value);
+      var returnDate = new Date(document.getElementById('return_date').value);
+  
+      // Calculate the difference in days
+      var diffInTime = returnDate.getTime() - rentDate.getTime();
+      var diffInDays = Math.ceil(diffInTime / (1000 * 3600 * 24));
+  
+      // Get the price per day as a string
+      var pricePerDayString = document.getElementById('price_per_day').value;
+  
+      // Convert the price per day to a number
+      var pricePerDay = 300000;
+  
+      // Calculate the total price
+      var totalPrice = diffInDays * pricePerDay;
+  
+      // Update the total price field as a string
+      document.getElementById('total_price')[0].textContent = "test";
     }
 </script>
 
@@ -70,7 +67,7 @@
     </table>
 </div>
 
-@foreach($Cars as $i => $cars)
+@foreach($Cars as $cars)
     <div class="modal fade" id="AddRental{{ $cars['car_id'] }}" tabindex="-1">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -119,13 +116,13 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-floating">
-                                <input type="date" name="rent_date" id="rent_date" class="form-control" placeholder="Rent Date" required oninput="calculateTotalPrice({{ $i }})">
+                                <input type="date" name="rent_date" id="rent_date" class="form-control" placeholder="Rent Date" required>
                                 <label for="rent_date">Rent Date</label>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-floating">
-                                <input type="date" name="return_date" id="return_date" class="form-control" placeholder="Return Date" required oninput="calculateTotalPrice({{ $i }})">
+                                <input type="date" name="return_date" id="return_date" class="form-control" placeholder="Return Date" required>
                                 <label for="return_date">Return Date</label>
                             </div>
                         </div>
@@ -142,11 +139,18 @@
                                 <label for="usage_region">Usage Region</label>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        {{-- <div class="col-md-12">
                             <div class="form-floating">
-                                <input type="text" name="total_price" id="total_price" class="form-control" placeholder="Rent Fee" value="0" disabled>
+                                <input type="text" name="total_price" id="total_price" class="form-control" placeholder="Rent Fee" required>
                                 <label for="total_price">Rent Fee</label>
                             </div>
+                        </div> --}}
+                        <p id="total_price"></p>
+                        <div class="text-center mb-3">
+                            <input type="button" class="btn btn-primary rounded-pill" onclick="calculateTotalPrice()">
+                                <span>
+                                    Test
+                                </span>
                         </div>
                         <div class="text-center mb-3">
                             <button class="btn btn-primary rounded-pill" onclick="getContent()" type="submit">

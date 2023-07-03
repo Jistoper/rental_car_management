@@ -70,6 +70,30 @@
       });
   </script>
 
+<script>
+  function calculateTotalPrice() {
+    var rentDate = new Date(document.getElementById('rent_date').value);
+    var returnDate = new Date(document.getElementById('return_date').value);
+
+    // Calculate the difference in days
+    var diffInTime = returnDate.getTime() - rentDate.getTime();
+    var diffInDays = Math.ceil(diffInTime / (1000 * 3600 * 24));
+
+    // Get the price per day as a string
+    var pricePerDayString = document.getElementById('price_per_day').value;
+
+    // Convert the price per day to a number
+    var pricePerDay = parseFloat(pricePerDayString);
+
+    // Calculate the total price
+    var totalPrice = diffInDays * pricePerDay;
+
+    // Update the total price field as a string
+    document.getElementById('total_price').value = totalPrice.toFixed(2).toString();
+  }
+</script>
+
+
   <script src="{{ asset('adminassets/assets/apexcharts/apexcharts.min.js') }}"></script>
   <script src="{{ asset('adminassets/assets/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('adminassets/assets/chart.js/chart.umd.js') }}"></script>

@@ -28,14 +28,14 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 //     return redirect()->route('');
 // })->name('home');
 
-Route::get('/', [HomeController::class, 'viewHome'])->name('home');
+Route::get('/', [HomeController::class, 'getData'])->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::view('/about', 'Home.landing.about')->name('about');
     Route::view('/contact', 'Home.contact')->name('contact');
-    Route::get('/pricing', [HomeController::class, 'viewPricing'])->name('pricing');
+    Route::get('/pricing', [HomeController::class, 'getDataPricing'])->name('pricing');
     Route::view('/service', 'Home.services')->name('service');
-    Route::get('/car', [HomeController::class, 'viewCar'])->name('car');
+    Route::view('/car', [HomeController::class, 'getDataPricing'])->name('car');
     Route::view('/car/{id}', 'Home.car-single')->name('car.single');
 
     Route::middleware('checkRole:admin')->group(function () {

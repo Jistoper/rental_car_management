@@ -149,14 +149,14 @@
       });
   </script>
 
-  <script src="{{ asset('adminassets/assets/apexcharts/apexcharts.min.js') }}"></script>
+  {{-- <script src="{{ asset('adminassets/assets/apexcharts/apexcharts.min.js') }}"></script>
   <script src="{{ asset('adminassets/assets/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('adminassets/assets/chart.js/chart.umd.js') }}"></script>
   <script src="{{ asset('adminassets/assets/echarts/echarts.min.js') }}"></script>
   <script src="{{ asset('adminassets/assets/quill/quill.min.js') }}"></script>
   <script src="{{ asset('adminassets/assets/simple-datatables/simple-datatables.js') }}"></script>
   <script src="{{ asset('adminassets/assets/tinymce/tinymce.min.js') }}"></script>
-  <script src="{{ asset('adminassets/assets/php-email-form/validate.js') }}"></script>
+  <script src="{{ asset('adminassets/assets/php-email-form/validate.js') }}"></script> --}}
 
   <!-- Template Main JS File -->
   <script src="{{ asset('adminassets/js/main.js') }}"></script>

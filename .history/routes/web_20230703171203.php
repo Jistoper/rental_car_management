@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::view('/contact', 'Home.contact')->name('contact');
     Route::get('/pricing', [HomeController::class, 'viewPricing'])->name('pricing');
     Route::view('/service', 'Home.services')->name('service');
-    Route::get('/car', [HomeController::class, 'viewCar'])->name('car');
+    Route::view('/car', [HomeController::class, 'viewCar'])->name('car');
     Route::view('/car/{id}', 'Home.car-single')->name('car.single');
 
     Route::middleware('checkRole:admin')->group(function () {
