@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 
@@ -24,16 +23,14 @@ Route::post('/register', [AuthController::class, 'store'])->name('store');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Accessible routes
-// Route::get('/', function () {
-//     return redirect()->route('');
-// })->name('home');
-
-Route::get('/', [HomeController::class, 'getData'])->name('home');
+Route::get('/', function () {
+    return view('index');
+})->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::view('/about', 'Home.about')->name('about');
     Route::view('/contact', 'Home.contact')->name('contact');
-    Route::get('/pricing', [HomeController::class, 'getDataPricing'])->name('pricing');
+    Route::view('/pricing', 'Home.pricing')->name('pricing');
     Route::view('/service', 'Home.services')->name('service');
     Route::view('/car', 'Home.car')->name('car');
     Route::view('/car/{id}', 'Home.car-single')->name('car.single');
