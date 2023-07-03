@@ -79,7 +79,7 @@
                 <h5 class="modal-title">Add Car</h5>
             </div>
             <div class="modal-body">
-                <form action="car.store" method="POST" class="row g-3 needs-validation" novalidate>
+                <form action="#" method="POST" class="row g-3 needs-validation" novalidate>
                     @csrf
                     <div class="col-md-3">
                         <div class="form-floating">

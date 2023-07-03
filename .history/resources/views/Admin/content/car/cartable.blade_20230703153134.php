@@ -79,7 +79,7 @@
                 <h5 class="modal-title">Add Car</h5>
             </div>
             <div class="modal-body">
-                <form action="car.store" method="POST" class="row g-3 needs-validation" novalidate>
+                <form action="#" method="POST" class="row g-3 needs-validation" novalidate>
                     @csrf
                     <div class="col-md-3">
                         <div class="form-floating">
@@ -161,7 +161,7 @@
                     <h5 class="modal-title">Edit Car Data</h5>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ route('car.storeEdit') }}" method="POST" class="row g-3 needs-validation" novalidate>
+                    <form action="{{ route('car.edit') }}" method="POST" class="row g-3 needs-validation" novalidate>
                         @csrf
                         <input type="hidden" name="car_id" id="car_id" value="{{ $cars['car_id'] }}">
                         <div class="col-md-3">
