@@ -69,14 +69,16 @@ class AdminController extends Controller
             "price" => intval($request->price),
             "is_available" => true
         ];
+
+        dd($data);
  
         // Upload and store the image file if provided
-        if ($request->hasFile('image')) {
-            $imageName = $image->hashName();
-            $image->storeAs('public/carphoto/', $imageName);
-        }
+        // if ($request->hasFile('image')) {
+        //     $imageName = $image->hashName();
+        //     $image->storeAs('public/carphoto/', $imageName);
+        // }
  
-        $response = Http::post('http://localhost:8080/api/cars', $data);
+        // $response = Http::post('http://localhost:8080/api/cars', $data);
  
         return redirect()->route('car.getall');
     }

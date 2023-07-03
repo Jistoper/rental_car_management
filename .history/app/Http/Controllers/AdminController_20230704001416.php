@@ -124,6 +124,7 @@ class AdminController extends Controller
             if ($request->image_before) {
                 Storage::disk('public')->delete('carphoto/' . $request->image_before);
             }
+            $image = $request->file('image');
             $image->storeAs('public/carphoto/', $image->hashName());
         }
 

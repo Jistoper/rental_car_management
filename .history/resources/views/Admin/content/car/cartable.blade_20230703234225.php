@@ -79,7 +79,7 @@
                 <h5 class="modal-title">Add Car</h5>
             </div>
             <div class="modal-body">
-                <form action="{{ route('car.store') }}" method="POST" class="row g-3 needs-validation" enctype="multipart/form-data" novalidate>
+                <form action="{{ route('car.store') }}" method="POST" class="row g-3 needs-validation" novalidate>
                     @csrf
                     <div class="col-md-3">
                         <div class="form-floating">
@@ -137,18 +137,6 @@
                             <label for="engine_number">Engine Number</label>
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="form-floating">
-                            <input type="number" name="price" id="price" class="form-control" placeholder="Price" required>
-                            <label for="price">Price</label>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-floating">
-                          <input type="file" name="image" id="image" class="form-control" required>
-                          <label for="image">Image</label>
-                        </div>
-                    </div>
                     <div class="text-center mb-3">
                         <button class="btn btn-primary rounded-pill" onclick="getContent()" type="submit">
                             <span>
@@ -173,10 +161,10 @@
                     <h5 class="modal-title">Edit Car Data</h5>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ route('car.storeEdit') }}" method="POST" class="row g-3 needs-validation" enctype="multipart/form-data" novalidate>
+                    <form action="{{ route('car.storeEdit') }}" method="POST" class="row g-3 needs-validation" novalidate>
                         @csrf
                         <input type="hidden" name="car_id" id="car_id" value="{{ $cars['car_id'] }}">
-                        <input type="hidden" name="image_before" id="image_before" value="{{ $cars['image'] }}">
+                        <input type="hidden" name="image" id="image" value="{{ $cars['image'] }}">
                         <div class="col-md-3">
                             <div class="form-floating">
                                 <input type="text" name="brand" id="brand" class="form-control" value="{{ $cars['brand'] }}" placeholder="Brand" required>
@@ -241,7 +229,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-floating">
-                              <input type="file" name="image" id="image" class="form-control" required>
+                              <input type="file" name="image" id="image" class="form-control @error('image') border-red-500 @enderror">
                               <label for="image">Image</label>
                             </div>
                         </div>

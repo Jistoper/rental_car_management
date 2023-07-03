@@ -79,7 +79,7 @@
                 <h5 class="modal-title">Add Car</h5>
             </div>
             <div class="modal-body">
-                <form action="{{ route('car.store') }}" method="POST" class="row g-3 needs-validation" enctype="multipart/form-data" novalidate>
+                <form action="{{ route('car.store') }}" method="POST" class="row g-3 needs-validation" novalidate>
                     @csrf
                     <div class="col-md-3">
                         <div class="form-floating">
@@ -135,18 +135,6 @@
                         <div class="form-floating">
                             <input type="text" name="engine_number" id="engine_number" class="form-control" placeholder="Engine Number" required>
                             <label for="engine_number">Engine Number</label>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-floating">
-                            <input type="number" name="price" id="price" class="form-control" placeholder="Price" required>
-                            <label for="price">Price</label>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-floating">
-                          <input type="file" name="image" id="image" class="form-control" required>
-                          <label for="image">Image</label>
                         </div>
                     </div>
                     <div class="text-center mb-3">
@@ -241,7 +229,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-floating">
-                              <input type="file" name="image" id="image" class="form-control" required>
+                              <input type="file" name="image" id="image" class="form-control" placeholder="Image" required>
                               <label for="image">Image</label>
                             </div>
                         </div>

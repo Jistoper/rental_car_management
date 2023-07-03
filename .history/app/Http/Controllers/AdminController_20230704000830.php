@@ -53,8 +53,6 @@ class AdminController extends Controller
 
     public function storeCar(Request $request)
     {
-        $image = $request->file('image');
-
         $data = [
             "brand" => $request->brand,
             "model" => $request->model,
@@ -65,15 +63,17 @@ class AdminController extends Controller
             "vin" => $request->vin,
             "engine_number" => $request->engine_number,
             "color" => $request->color,
-            "image" => $image ? $image->hashName() : "",
             "price" => intval($request->price),
             "is_available" => true
         ];
  
         // Upload and store the image file if provided
         if ($request->hasFile('image')) {
+            Storage::disk('public')->delete('carphoto/' . $request->image_before);
+            $image = $request->file('image');
             $imageName = $image->hashName();
             $image->storeAs('public/carphoto/', $imageName);
+            $data['image'] = $imageName;
         }
  
         $response = Http::post('http://localhost:8080/api/cars', $data);
@@ -121,9 +121,8 @@ class AdminController extends Controller
 
         // Upload and store the image file if provided
         if ($request->hasFile('image')) {
-            if ($request->image_before) {
-                Storage::disk('public')->delete('carphoto/' . $request->image_before);
-            }
+            Storage::disk('public')->delete('carphoto/' . $request->image_before);
+            $image = $request->file('image');
             $image->storeAs('public/carphoto/', $image->hashName());
         }
 
