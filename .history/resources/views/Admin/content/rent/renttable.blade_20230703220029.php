@@ -74,7 +74,7 @@
                     <td>{{ $cars['is_available'] ? 'Yes' : 'No' }}</td>
                     <td>
                         @if ($cars['is_available'])
-                            <button type="button" class="btn btn-sm rounded-pill btn-outline-primary bi-handbag-fill" data-bs-toggle="modal" data-bs-target="#AddRental{{ $cars['car_id'] }}" onclick="setMinDate({{ $i }})"></button>
+                            <button type="button" class="btn btn-sm rounded-pill btn-outline-primary bi-handbag-fill" data-bs-toggle="modal" data-bs-target="#AddRental{{ $cars['car_id'] }}" onclick="setMinDate({{ $cars['car_id'] }})"></button>
                         @endif
                     </td>
                 </tr>

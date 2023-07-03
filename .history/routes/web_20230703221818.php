@@ -32,7 +32,7 @@ Route::get('/', [HomeController::class, 'viewHome'])->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::view('/about', 'Home.landing.about')->name('about');
-    Route::view('/contact', 'Home.landing.contact')->name('contact');
+    Route::view('/contact', 'Home.contact')->name('contact');
     Route::get('/pricing', [HomeController::class, 'viewPricing'])->name('pricing');
     Route::view('/service', 'Home.landing.services')->name('service');
     Route::get('/car', [HomeController::class, 'viewCar'])->name('car');

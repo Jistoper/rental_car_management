@@ -36,8 +36,8 @@
         var tomorrowDate = tomorrow.toISOString().split('T')[0];
 
         // Set the min attribute for rent_date and return_date inputs
-        document.querySelectorAll('input[id="rent_date"]')[id].setAttribute('min', currentDate);
-        document.querySelectorAll('input[id="return_date"]')[id].setAttribute('min', tomorrowDate);
+        document.getElementById('rent_date').setAttribute('min', currentDate);
+        document.getElementById('return_date').setAttribute('min', tomorrowDate);
     }
 </script>
 
@@ -61,7 +61,7 @@
           </tr>
         </thead>
         <tbody>
-            @foreach($Cars as $i => $cars)
+            @foreach($Cars as $cars)
                 <tr>
                     <td>{{ $cars['car_id'] }}</td>
                     <td>{{ $cars['brand'] }}</td>
@@ -74,7 +74,7 @@
                     <td>{{ $cars['is_available'] ? 'Yes' : 'No' }}</td>
                     <td>
                         @if ($cars['is_available'])
-                            <button type="button" class="btn btn-sm rounded-pill btn-outline-primary bi-handbag-fill" data-bs-toggle="modal" data-bs-target="#AddRental{{ $cars['car_id'] }}" onclick="setMinDate({{ $i }})"></button>
+                            <button type="button" class="btn btn-sm rounded-pill btn-outline-primary bi-handbag-fill" data-bs-toggle="modal" data-bs-target="#AddRental{{ $cars['car_id'] }}" onclick="setMinDate({{ $cars['car_id'] }})"></button>
                         @endif
                     </td>
                 </tr>
@@ -132,7 +132,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-floating">
-                                <input type="date" name="rent_date" id="rent_date" class="form-control" placeholder="Rent Date" required oninput="calculateTotalPrice({{ $i }})">
+                                <input type="date" name="rent_date" id="rent_date" class="form-control" placeholder="Rent Date" required oninput="calculateTotalPrice({{ $i }})" min="2023-07-01">
                                 <label for="rent_date">Rent Date</label>
                             </div>
                         </div>

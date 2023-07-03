@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>RentCarNaSee</title>
+    <title>Car Rental Management</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -57,7 +57,7 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2"><a href="#" class="logo">Rent<span>Car</span> NaSee</a></h2>
+              <h2 class="ftco-heading-2"><a href="#" class="logo">Car<span>book</span></a></h2>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
@@ -106,7 +106,9 @@
         <div class="row">
           <div class="col-md-12 text-center">
 
-            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</p>
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
           </div>
         </div>
       </div>

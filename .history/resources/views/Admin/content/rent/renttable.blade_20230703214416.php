@@ -25,20 +25,6 @@
             document.querySelectorAll('input[id="total_price"]')[id].value = "0";
         }
     }
-
-    function setMinDate(id) {
-        // Get the current date
-        var currentDate = new Date().toISOString().split('T')[0];
-
-        // Get the date value for tomorrow
-        var tomorrow = new Date();
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        var tomorrowDate = tomorrow.toISOString().split('T')[0];
-
-        // Set the min attribute for rent_date and return_date inputs
-        document.querySelectorAll('input[id="rent_date"]')[id].setAttribute('min', currentDate);
-        document.querySelectorAll('input[id="return_date"]')[id].setAttribute('min', tomorrowDate);
-    }
 </script>
 
 <div>
@@ -61,7 +47,7 @@
           </tr>
         </thead>
         <tbody>
-            @foreach($Cars as $i => $cars)
+            @foreach($Cars as $cars)
                 <tr>
                     <td>{{ $cars['car_id'] }}</td>
                     <td>{{ $cars['brand'] }}</td>
@@ -74,7 +60,7 @@
                     <td>{{ $cars['is_available'] ? 'Yes' : 'No' }}</td>
                     <td>
                         @if ($cars['is_available'])
-                            <button type="button" class="btn btn-sm rounded-pill btn-outline-primary bi-handbag-fill" data-bs-toggle="modal" data-bs-target="#AddRental{{ $cars['car_id'] }}" onclick="setMinDate({{ $i }})"></button>
+                            <button type="button" class="btn btn-sm rounded-pill btn-outline-primary bi-handbag-fill" data-bs-toggle="modal" data-bs-target="#AddRental{{ $cars['car_id'] }}"></button>
                         @endif
                     </td>
                 </tr>
@@ -132,7 +118,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-floating">
-                                <input type="date" name="rent_date" id="rent_date" class="form-control" placeholder="Rent Date" required oninput="calculateTotalPrice({{ $i }})">
+                                <input type="date" name="rent_date" id="rent_date" class="form-control" placeholder="Rent Date" required oninput="calculateTotalPrice({{ $i }})" min="2023-07-01">
                                 <label for="rent_date">Rent Date</label>
                             </div>
                         </div>

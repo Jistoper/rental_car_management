@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>RentCarNaSee</title>
+    <title>Carbook - Free Bootstrap 4 Template by Colorlib</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -21,43 +21,96 @@
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
 
+    
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- Favicons -->
-    <link href="{{ asset('adminassets/img/favicon.png') }}" rel="icon">
-    <link href="{{ asset('adminassets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-    
-    <!-- Vendor CSS Files -->
-    {{-- <link href="{{ asset('adminassets/assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"> --}}
-    <link href="{{ asset('adminassets/assets/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('adminassets/assets/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('adminassets/assets/quill/quill.snow.css') }}" rel="stylesheet">
-    <link href="{{ asset('adminassets/assets/quill/quill.bubble.css') }}" rel="stylesheet">
-    <link href="{{ asset('adminassets/assets/remixicon/remixicon.css') }}" rel="stylesheet">
-    <link href="{{ asset('adminassets/assets/simple-datatables/style.css') }}" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="{{ asset('adminassets/css/style.css') }}" rel="stylesheet">
   </head>
   <body>
     
-    @include('Home.navbar')
+	  @include('Home.navbar')
     <!-- END nav -->
     
-    @yield('content')	
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+          <div class="col-md-9 ftco-animate pb-5">
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Contact <i class="ion-ios-arrow-forward"></i></span></p>
+            <h1 class="mb-3 bread">Contact Us</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section contact-section">
+      <div class="container">
+        <div class="row d-flex mb-5 contact-info">
+        	<div class="col-md-4">
+        		<div class="row mb-5">
+		          <div class="col-md-12">
+		          	<div class="border w-100 p-4 rounded mb-2 d-flex">
+			          	<div class="icon mr-3">
+			          		<span class="icon-map-o"></span>
+			          	</div>
+			            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+			          </div>
+		          </div>
+		          <div class="col-md-12">
+		          	<div class="border w-100 p-4 rounded mb-2 d-flex">
+			          	<div class="icon mr-3">
+			          		<span class="icon-mobile-phone"></span>
+			          	</div>
+			            <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+			          </div>
+		          </div>
+		          <div class="col-md-12">
+		          	<div class="border w-100 p-4 rounded mb-2 d-flex">
+			          	<div class="icon mr-3">
+			          		<span class="icon-envelope-o"></span>
+			          	</div>
+			            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+			          </div>
+		          </div>
+		        </div>
+          </div>
+          <div class="col-md-8 block-9 mb-md-5">
+            <form action="#" class="bg-light p-5 contact-form">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Name">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Email">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Subject">
+              </div>
+              <div class="form-group">
+                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+              </div>
+            </form>
+          
+          </div>
+        </div>
+        <div class="row justify-content-center">
+        	<div class="col-md-12">
+        		{{-- <div id="map" class="bg-white"></div> --}}
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.830025768485!2d-73.98785318460535!3d40.744972179327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258f95dfbf82b%3A0xf8f526651f0ad7c6!2s198%20West%2021th%20Street%2C%20Suite%20721%2C%20New%20York%2C%20NY%2010016%2C%20United%20States!5e0!3m2!1sen!2sca!4v1625905724479!5m2!1sen!2sca" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        	</div>
+        </div>
+      </div>
+    </section>
+	
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2"><a href="#" class="logo">Rent<span>Car</span> NaSee</a></h2>
+              <h2 class="ftco-heading-2"><a href="#" class="logo">Car<span>book</span></a></h2>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
@@ -106,7 +159,9 @@
         <div class="row">
           <div class="col-md-12 text-center">
 
-            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</p>
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
           </div>
         </div>
       </div>
@@ -135,29 +190,6 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-
-  <!-- Vendor JS Files -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-      $(document).ready(function() {
-          $("#showTableButton").click(function(e) {
-              e.preventDefault();
-              $("#tableContainer").toggle();
-          });
-      });
-  </script>
-
-  <script src="{{ asset('adminassets/assets/apexcharts/apexcharts.min.js') }}"></script>
-  <script src="{{ asset('adminassets/assets/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('adminassets/assets/chart.js/chart.umd.js') }}"></script>
-  <script src="{{ asset('adminassets/assets/echarts/echarts.min.js') }}"></script>
-  <script src="{{ asset('adminassets/assets/quill/quill.min.js') }}"></script>
-  <script src="{{ asset('adminassets/assets/simple-datatables/simple-datatables.js') }}"></script>
-  <script src="{{ asset('adminassets/assets/tinymce/tinymce.min.js') }}"></script>
-  <script src="{{ asset('adminassets/assets/php-email-form/validate.js') }}"></script>
-
-  <!-- Template Main JS File -->
-  <script src="{{ asset('adminassets/js/main.js') }}"></script>
     
   </body>
 </html>
