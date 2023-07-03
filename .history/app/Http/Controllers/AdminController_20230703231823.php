@@ -50,41 +50,39 @@ class AdminController extends Controller
         return redirect()->route('car.getall');
     }
 
-    // public function storeCar(Request $request)
-    // {
-    //     $user = Auth::user();
-    //     $data = [
-    //         "brand" => $request->brand,
-    //         "model" => $request->model,
-    //         "type" => $request->type,
-    //         "capacity" => $request->capacity,
-    //         "year" => intval($request->year),
-    //         "registration_number" => $request->registration_number,
-    //         "vin" => $request->vin,
-    //         "engine_number" => $request->engine_number,
-    //         "color" => $request->color,
-    //         "price" => intval($request->price),
-    //         "is_available" => true
-    //     ];
-
-
+    public function storeCar(Request $request)
+    {
+        $user = Auth::user();
+        $data = [
+            "brand" => $request->brand,
+            "model" => $request->model,
+            "type" => $request->type,
+            "capacity" => $request->capacity,
+            "year" => intval($request->year),
+            "registration_number" => $request->registration_number,
+            "vin" => $request->vin,
+            "engine_number" => $request->engine_number,
+            "color" => $request->color,
+            "price" => intval($request->price),
+            "is_available" => true
+        ];
  
-    //     // Upload and store the image file if provided
-    //     if ($request->file('image') != null) {
-    //         Storage::disk('public')->delete('carphoto/' . $user->image);
-    //         $image = $request->file('image');
-    //         $imageName = $image->hashName();
-    //         $image->storeAs('public/carphoto/', $imageName);
-    //         $data['image'] = $imageName;
-    //     }
+        // Upload and store the image file if provided
+        if ($request->file('image') != null) {
+            Storage::disk('public')->delete('carphoto/' . $user->image);
+            $image = $request->file('image');
+            $imageName = $image->hashName();
+            $image->storeAs('public/carphoto/', $imageName);
+            $data['image'] = $imageName;
+        }
  
-    //     /** @var \App\Models\User $user **/
-    //     $user->save();
+        /** @var \App\Models\User $user **/
+        $user->save();
  
-    //     $response = Http::post('http://localhost:8080/api/cars', $data);
+        $response = Http::post('http://localhost:8080/api/cars', $data);
  
-    //     return redirect()->route('car.getall');
-    // }
+        return redirect()->route('car.getall');
+    }
 
     public function editView(Request $request)
     {
