@@ -20,14 +20,14 @@
 				@foreach($Cars as $car)
 					<div class="col-md-4">
 						<div class="car-wrap rounded ftco-animate">
-							<div class="img rounded flex-wrap align-items-end">
-								<img src="{{ asset('storage/carphoto/' . $car['image']) }}" alt="Car Picture" class="rounded-image" width="200" height="150">
+							<div class="img rounded d-flex align-items-end">
+								<img src="{{ asset('storage/carphoto/' . $car['image']) }}" alt="Car Picture">
 							</div>
 							<div class="text">
 								<h2 class="mb-0"><a href="car-single.html">{{ $car['model'] }}</a></h2>
 								<div class="d-flex mb-3">
 									<span class="cat">{{ $car['brand'] }}</span>
-									<p class="price ml-auto">Rp {{ $car['price'] }},- <span>/day</span></p>
+									<p class="price ml-auto">$500 <span>/day</span></p>
 								</div>
 								<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Book now</a> <button type="button" class="btn btn-secondary py-2 ml-1" data-bs-toggle="modal" data-bs-target="#EditCar{{ $car['car_id'] }}">Details</button></p>
 							</div>
