@@ -87,12 +87,10 @@
                                         </div>
                                         <p class="d-flex mb-0 d-block">
                                             @guest
-                                                <a href="{{ route('login') }}" type="button" class="btn btn-primary py-2 mr-1 bi-handbag-fill"> Book Now</a>
                                             @else
                                                 @if ($cars['is_available'])
                                                     <a href="#" type="button" class="btn btn-primary py-2 mr-1 bi-handbag-fill" data-bs-toggle="modal" data-bs-target="#AddRental{{ $cars['car_id'] }}" onclick="setMinDate({{ $i }})"> Book Now</a>
                                                 @endif
-                                            @endif
                                             <a href="#" class="btn btn-secondary py-2 ml-1">Details</a>
                                         </p>
                                     </div>
