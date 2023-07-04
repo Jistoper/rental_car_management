@@ -6,6 +6,13 @@ RentCar NaSee adalah sebuah program rental mobil yang memberikan kemudahan dan k
 Frontend dari program ini menggunakan Laravel, sedangkan untuk backendnya menggunakan Go Language dengan Rest API.
 
 
+## Contributors
+1. Jonathan A - [@Jistoper](https://github.com/Jistoper)
+2. Deny A - [@denyandriawan01](https://github.com/denyandriawan01)
+3. Naufal Humam - [@nhumam123](https://github.com/nhumam123)
+4. Raffi Naufal - [@RaffiN2002](https://github.com/RaffiN2002)
+
+
 ## Links
 Link Repository Backend yang digunakan : https://github.com/denyandriawan01/Backend_WebProg_RentalCarManagement
 
